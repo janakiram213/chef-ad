@@ -1,0 +1,46 @@
+Terminology chef 
+==================
+Recipes :--
+            Fondamental configuration witn in organization (dependent of orhter recipe , we can add run list)
+
+cookbook :--defines a scenario and it is a fundamental unit of config and policy 
+
+Chef-clinet :-- Agent that runs locally on the nodes that is registered with the chef server 
+
+Convergence :--occurs when chef-client configures the system /node based on the info collected form chef-server
+
+Ohai :-- Tool used to collect all the attributes on a node and then provide attributes to chefserver at the start of every chef-client run 
+
+
+config drift :--node state dont not reflect or updated on the chef-server
+
+Resource:-- A resource is a statement of configuration policy that:
+
+Describes the desired state for a configuration item
+Declares the steps needed to bring that item to the desired state
+Specifies a resource type—such as package, template, or service
+Lists additional details (also known as resource properties), as necessary
+Are grouped into recipes, which describe working configurations
+
+Provider :
+
+Data bag : stored in json format user and group 
+
+
+Wrokstation :-- configured wit kinfe, and used to sync with chef-repo and intacts with chef server
+
+chef server :-- it hub for all you config data stores cookbooks and polices 
+
+knife : it is cammnad line tool which provides and interface between the local chef-repo and chef server
+
+client.rb :--- configaraiton file for chef-clinet located at /etc/chef/client.rb
+
+
+Node Object : consists of run-list and node attributes it discribs of the node
+
+chef-repo : located in workstation and installed with the starter kit , we can sync with SCM (git or svn) and it stored cookdbooks databags envi roles and config files
+
+organization : used in chef enterprise server to restrict access to objests ,nodes env , (isolated env)
+
+
+

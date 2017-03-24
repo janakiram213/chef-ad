@@ -1,0 +1,126 @@
+curl -L https://www.opscode.com/chef/install.sh | bash
+
+knife bootstrap 192.168.56.102 -x username -P passwd --sudo -N appserver
+knife bootstrap 52.77.217.109  --ssh-user ec2-user --sudo --identity-file ~/.ssh/Feb.pem if ec2
+knife bootstrap node_domain_or_IP -x username -i sameKey -N chef_name_you_want --sudo
+
+knife cookbook create motd
+knife cookbook upload motd
+knife node run_list add * "recipe[motd]"
+
+knife role from file database.rb
+knife node run_list add git.mylab.local "role[database]"
+
+knife search node "os:linux"
+knife search node "platform:ubuntu" -a memory.swap.free
+knife search node "kernel_release:3.1*"
+knife search node "kernel_release:3.1*" -a kernel.release
+knife search node "os:linux AND platform:ubuntu" -a kernel.releas
+knife search node "os:linux AND platform_family:debian" -a platform
+knife search users "id:rag" -a uid
+https://github.com/jhotta/chef-fundamentals-ja/blob/master/slides/more-cookbooks/01_slide.md
+
+knife cookbook site install iptables 
+
+monday 6.30am ist to 8.30 am int 
+
+
+hari kiran 
+
+87 .5.5
+btech b
+
+haritsya gotram
+5.9
+8330928625
+
+
+
+
+mkdir data_bag
+knife data bag create users
+ 
+
+knife data bag from file users user2.json
+ knife data bag list
+ knife data bag show users
+  knife data bag show users user1
+knife data bag from file groups micro.json
+knife data bag show groups
+
+knife search users "id:rag" -a uid
+
+ mkdir environments
+  cd environments/
+  cd environments/
+  knife environment list -w
+  knife environment from file dev.rb
+  knife environment from file dev.rb
+  cd environments/
+  knife environment from file dev.rb
+  cd environments/
+  knife environment from file dev.rb
+  vi environments/
+ knife environment compare dev
+knife environment compare dev prod
+knife environment delete dev
+knife environment compare --all
+
+knife role create web
+
+
+
+
+274912061
+
+recipes : basic config element
+cookbook : defines a scenarion and the fundamental unit config.
+
+chef-clinet: agent that runs on nodes who registed with chef-server.
+convegence: Happens when chef-client configure the node based oon the infromation collected from chef-server 
+
+configuration drift: occurs when node state does not reflect in config on the chefserver 
+
+
+resources: describes the desired state of an element
+
+kinfe : is a tool to commnicate form wrokstation to chef server
+
+client.rb : config file nodes for chef-clinet ---/etc/chef/client.rb
+
+data-bags : json 
+
+chef-repo : located in workstaton , you can get it from starter kit , it should sync git and 
+
+
+knife plugns:
+
+knife-flip 
+
+
+
+
+=================================================
+ini-- pending -- running -- shutingdown -- terminate
+
+userdata scripts will exigute with the help of cloud init service in servers
+
+make sure that you have service called cloud init in the server AMI
+
+Two types of status checks 
+
+System Status Checks --- hareware checks  functioning properly of amazon -- if this failed  -- to reslove stop and start 
+
+	
+Instance Status Checks --These checks monitor your software and network configuration for this instance.if this failed  -- to reslove reboot the server 
+
+ Reserved Instance -- for get discounts on server go for reserved instance 
+
+volunme -- EBS -- normal crating , snapshot 
+
+
+careate a volume with help of snapshot for data recovery and increase volume size.
+
+
+
+
